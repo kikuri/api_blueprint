@@ -1,0 +1,973 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>API Documentation</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#line">LINE</a></div><div class="collapse-content"><ul><li><a href="#header-エンドポイント">エンドポイント</a></li><li><a href="#header-db内容">DB内容</a></li><li><a href="#header-カラム">カラム</a></li><li><a href="#line-会員情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-テキスト情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-音楽情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-お気に入り情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-会員情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#line-テキスト情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#line-音楽情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#line-お気に入り情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#line-再生数の上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-お気に入りの上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-よく聴くアーティストの上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-ランダムで５つユーザーとユーザーの聴いている曲取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-他の人がお気に入りに登録してある曲を５つランダムで取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#line-全てのユーザーのデータ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#messenger">MESSENGER</a></div><div class="collapse-content"><ul><li><a href="#header-エンドポイント-1">エンドポイント</a></li><li><a href="#header-db内容-1">DB内容</a></li><li><a href="#header-カラム-1">カラム</a></li><li><a href="#messenger-会員情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-テキスト情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-音楽情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-お気に入り情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-会員情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#messenger-テキスト情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#messenger-音楽情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#messenger-お気に入り情報挿入-post"><span class="badge post"><i class="fa fa-plus"></i></span>情報挿入</a></li><li><a href="#messenger-再生数の上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-お気に入りの上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-よく聴くアーティストの上位５つ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-ランダムで５つユーザーとユーザーの聴いている曲取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-他の人がお気に入りに登録してある曲を５つランダムで取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li><li><a href="#messenger-全てのユーザーのデータ取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#emotion-analytics">EMOTION-ANALYTICS</a></div><div class="collapse-content"><ul><li><a href="#header-エンドポイント-2">エンドポイント</a></li><li><a href="#emotion-analytics-楽曲情報取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#emotion-analytics-1">EMOTION-ANALYTICS</a></div><div class="collapse-content"><ul><li><a href="#emotion-analytics-rdsからシーンごとの楽曲を取得-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>情報取得</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">API Documentation</h1></header><section id="line" class="resource-group"><h2 class="group-heading">LINE <a href="#line" class="permalink">&para;</a></h2><h2 id="header-エンドポイント">エンドポイント <a class="permalink" href="#header-エンドポイント" aria-hidden="true">¶</a></h2>
+<p>[<a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev</a>]</p>
+<ul>
+<li>
+<p>Request (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span></code></pre>
+</li>
+<li>
+<p>X-api-key</p>
+<pre><code>uREHkqk<span class="hljs-title">m5</span><span class="hljs-keyword">g8</span>H<span class="hljs-label">nev8</span>FcDlJ<span class="hljs-number">1</span>Bz<span class="hljs-title">M2</span>olP<span class="hljs-number">0</span>wz<span class="hljs-number">1</span>IDVE<span class="hljs-number">0</span>oU</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="header-db内容">DB内容 <a class="permalink" href="#header-db内容" aria-hidden="true">¶</a></h3>
+<ul>
+<li>
+<p>LINEの会員情報テーブル(Line_TEST)</p>
+</li>
+<li>
+<p>LINEのテキスト情報テーブル(Line_TEST_text)</p>
+</li>
+<li>
+<p>LINEの音楽情報テーブル(Line_TEST_music)</p>
+</li>
+<li>
+<p>LINEのお気に入り情報テーブル(Line_TEST_like)</p>
+</li>
+</ul>
+<h3 id="header-カラム">カラム <a class="permalink" href="#header-カラム" aria-hidden="true">¶</a></h3>
+<ul>
+<li>会員情報テーブル
+<ul>
+<li>mid(LINEの会員id)</li>
+<li>nickname(LINEの登録名)</li>
+<li>pictureUrl(プロフィール写真)</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_userdata]</p>
+<ul>
+<li>テキストテーブル
+<ul>
+<li>mid(LINEの会員id)</li>
+<li>text</li>
+<li>context</li>
+<li>story_flag</li>
+<li>counter</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_textdata]</p>
+<ul>
+<li>音楽情報テーブル
+<ul>
+<li>mid(LINEの会員id)</li>
+<li>artist_name</li>
+<li>song_name</li>
+<li>artist_id</li>
+<li>song_id</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_musicdata]</p>
+<ul>
+<li>お気に入り情報テーブル
+<ul>
+<li>mid(LINEの会員id)</li>
+<li>artist_name</li>
+<li>song_name</li>
+<li>artist_id</li>
+<li>song_id</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_likedata]</p>
+<div id="line-会員情報取得" class="resource"><h3 class="resource-heading">会員情報取得 <a href="#line-会員情報取得" class="permalink">&nbsp;&para;</a></h3><div id="line-会員情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-会員情報取得-get" class="method get">GET</a><code class="uri">/get_userdata/&lt;mid&gt;</code></h4><h4 id="header-処理概要">処理概要 <a class="permalink" href="#header-処理概要" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>会員情報を1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Uf8787f878b913f22d102aff4c69c7c67"</span></span>,
+    "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"KENZO"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_userdata/<mid></span></div></div></div><div id="line-テキスト情報取得" class="resource"><h3 class="resource-heading">テキスト情報取得 <a href="#line-テキスト情報取得" class="permalink">&nbsp;&para;</a></h3><div id="line-テキスト情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-テキスト情報取得-get" class="method get">GET</a><code class="uri">/get_textdata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-1">処理概要 <a class="permalink" href="#header-処理概要-1" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>テキスト情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Uf8787f878b913f22d102aff4c69c7c67"</span></span>,
+    "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"おはよう"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:01/13/17:00:00:10"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_textdata/<mid></span></div></div></div><div id="line-音楽情報取得" class="resource"><h3 class="resource-heading">音楽情報取得 <a href="#line-音楽情報取得" class="permalink">&nbsp;&para;</a></h3><div id="line-音楽情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-音楽情報取得-get" class="method get">GET</a><code class="uri">/get_musicdata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-2">処理概要 <a class="permalink" href="#header-処理概要-2" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>音楽情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">91160335</span></span>,
+    "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"RADWIMPS"</span></span>,
+    "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Uf8787f878b913f22d102aff4c69c7c67"</span></span>,
+    "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
+    "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">1141763442</span></span>,
+    "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"なんでもないや_(movie_ver_)"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:01/18/17:14:28:44"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_musicdata/<mid></span></div></div></div><div id="line-お気に入り情報取得" class="resource"><h3 class="resource-heading">お気に入り情報取得 <a href="#line-お気に入り情報取得" class="permalink">&nbsp;&para;</a></h3><div id="line-お気に入り情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-お気に入り情報取得-get" class="method get">GET</a><code class="uri">/get_likedata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-3">処理概要 <a class="permalink" href="#header-処理概要-3" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入り情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"西野_カナ"</span></span>,
+    "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Uf8787f878b913f22d102aff4c69c7c67"</span></span>,
+    "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">7</span></span>,
+    "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"トリセツ"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:01/16/17:13:25:02"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_likedata/<mid></span></div></div></div><div id="line-会員情報挿入" class="resource"><h3 class="resource-heading">会員情報挿入 <a href="#line-会員情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="line-会員情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#line-会員情報挿入-post" class="method post">POST</a><code class="uri">/post_request_userdata</code></h4><h4 id="header-処理概要-4">処理概要 <a class="permalink" href="#header-処理概要-4" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>会員情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_userdataを追記しpostするmid,nicknameを記述</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_userdata">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_userdata</a>
+‘{“mid” : “???”, “nickname” : “???”, “pictureUrl”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_userdata</span></div></div></div><div id="line-テキスト情報挿入" class="resource"><h3 class="resource-heading">テキスト情報挿入 <a href="#line-テキスト情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="line-テキスト情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#line-テキスト情報挿入-post" class="method post">POST</a><code class="uri">/post_request_textdata</code></h4><h4 id="header-処理概要-5">処理概要 <a class="permalink" href="#header-処理概要-5" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>テキスト情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_textdataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_textdata">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_textdata</a>
+‘{“mid” : “???”, “text” : “???”, “context”:”???”,”story_flag”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_textdata</span></div></div></div><div id="line-音楽情報挿入" class="resource"><h3 class="resource-heading">音楽情報挿入 <a href="#line-音楽情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="line-音楽情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#line-音楽情報挿入-post" class="method post">POST</a><code class="uri">/post_request_musicdata</code></h4><h4 id="header-処理概要-6">処理概要 <a class="permalink" href="#header-処理概要-6" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>音楽情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_musicdataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_musicdata">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_musicdata</a>
+‘{“mid” : “???”, “artist_name” : “???”, “song_name” : “???”, “song_id” : ”???”, “artist_id”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_musicdata</span></div></div></div><div id="line-お気に入り情報挿入" class="resource"><h3 class="resource-heading">お気に入り情報挿入 <a href="#line-お気に入り情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="line-お気に入り情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#line-お気に入り情報挿入-post" class="method post">POST</a><code class="uri">/post_request_likedata</code></h4><h4 id="header-処理概要-7">処理概要 <a class="permalink" href="#header-処理概要-7" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入り情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_likedataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_likedata">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_likedata</a>
+‘{“mid” : “???”, “artist_name” : “???”, “song_name” : “???”, “song_id” : ”???”, “artist_id”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_likedata</span></div></div></div><div id="line-再生数の上位５つ取得" class="resource"><h3 class="resource-heading">再生数の上位５つ取得 <a href="#line-再生数の上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="line-再生数の上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-再生数の上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_musicdata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-8">処理概要 <a class="permalink" href="#header-処理概要-8" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>再生数の上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_musicdata/<mid></span></div></div></div><div id="line-お気に入りの上位５つ取得" class="resource"><h3 class="resource-heading">お気に入りの上位５つ取得 <a href="#line-お気に入りの上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="line-お気に入りの上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-お気に入りの上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_likedata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-9">処理概要 <a class="permalink" href="#header-処理概要-9" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入りの上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_likedata/<mid></span></div></div></div><div id="line-よく聴くアーティストの上位５つ取得" class="resource"><h3 class="resource-heading">よく聴くアーティストの上位５つ取得 <a href="#line-よく聴くアーティストの上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="line-よく聴くアーティストの上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-よく聴くアーティストの上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_artistdata/&lt;mid&gt;</code></h4><h4 id="header-処理概要-10">処理概要 <a class="permalink" href="#header-処理概要-10" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>よく聴くアーティストの上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_artistdata/<mid></span></div></div></div><div id="line-ランダムで５つユーザーとユーザーの聴いている曲取得" class="resource"><h3 class="resource-heading">ランダムで５つユーザーとユーザーの聴いている曲取得 <a href="#line-ランダムで５つユーザーとユーザーの聴いている曲取得" class="permalink">&nbsp;&para;</a></h3><div id="line-ランダムで５つユーザーとユーザーの聴いている曲取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-ランダムで５つユーザーとユーザーの聴いている曲取得-get" class="method get">GET</a><code class="uri">/scan_randomuserdata/&lt;nickname&gt;</code></h4><h4 id="header-処理概要-11">処理概要 <a class="permalink" href="#header-処理概要-11" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>ランダムで５つユーザーとユーザーの聴いている曲取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+<li>
+<p>groupは返って来ない</p>
+</li>
+<li>
+<p>以下はpictureUrlも返す仕様になっているが、ユーザーに情報がない時の例</p>
+<pre><code>{
+    "<span class="hljs-attribute">results</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"4175-30241"</span></span>,
+        "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"497-123740"</span></span>,
+        "<span class="hljs-attribute">pictureUrl</span>": <span class="hljs-value"><span class="hljs-string">"4309523@471"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U42257e295b6cff33721e0a15efb9f399"</span></span>,
+        "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"ゆり"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Uf8787f878b913f22d102aff4c69c7c67"</span></span>,
+        "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"KENZO"</span></span>,
+        "<span class="hljs-attribute">pictureUrl</span>": <span class="hljs-value"><span class="hljs-string">"http://dl.profile.line-cdn.net/0m00d512ac7251e4649656d1d706169a4499090db24a2d"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"Udcb1a4093025fd5cb17ed6afbd01163c"</span></span>,
+        "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"Keijiro Toyoda"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"4907-23417"</span></span>,
+        "<span class="hljs-attribute">nickname</span>": <span class="hljs-value"><span class="hljs-string">"95741-20341"</span></span>,
+        "<span class="hljs-attribute">pictureUrl</span>": <span class="hljs-value"><span class="hljs-string">"4u51-2y@413"</span>
+      </span>}
+    ]
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_randomuserdata/<nickname></span></div></div></div><div id="line-他の人がお気に入りに登録してある曲を５つランダムで取得" class="resource"><h3 class="resource-heading">他の人がお気に入りに登録してある曲を５つランダムで取得 <a href="#line-他の人がお気に入りに登録してある曲を５つランダムで取得" class="permalink">&nbsp;&para;</a></h3><div id="line-他の人がお気に入りに登録してある曲を５つランダムで取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-他の人がお気に入りに登録してある曲を５つランダムで取得-get" class="method get">GET</a><code class="uri">/scan_randomlike/&lt;mid&gt;</code></h4><h4 id="header-処理概要-12">処理概要 <a class="permalink" href="#header-処理概要-12" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>他の人がお気に入りに登録してある曲を５つランダムで取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+<li>
+<p>groupは返って来ない</p>
+<pre><code>{
+    "<span class="hljs-attribute">results</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">1104839687</span></span>,
+        "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"ちゃんみな"</span></span>,
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U91df639b36f6ca16a7e0639849e12272"</span></span>,
+        "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">1142062743</span></span>,
+        "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"FXXKER"</span></span>,
+        "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:02/03/17:11:58:35"</span></span>,
+        "<span class="hljs-attribute">unixtime</span>": <span class="hljs-value"><span class="hljs-number">1486090715</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">280215821</span></span>,
+        "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"デミ・ロヴァート"</span></span>,
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U09890c1e99837e155dcf271cfd83b51a"</span></span>,
+        "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">954491816</span></span>,
+        "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"ReallyDon'tCare(featCherLloyd)"</span></span>,
+        "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:02/04/17:16:18:45"</span></span>,
+        "<span class="hljs-attribute">unixtime</span>": <span class="hljs-value"><span class="hljs-number">1486192725</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">150974880</span></span>,
+        "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"Superfly"</span></span>,
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U382514d6fac41cfbc076f4c8d5aea668"</span></span>,
+        "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">992816390</span></span>,
+        "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"Beautiful"</span></span>,
+        "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:02/15/17:09:25:45"</span></span>,
+        "<span class="hljs-attribute">unixtime</span>": <span class="hljs-value"><span class="hljs-number">1487118345</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">269598403</span></span>,
+        "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"星野源"</span></span>,
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U42456ae7dcec74c6d8e3947ba2d49e56"</span></span>,
+        "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">1156375396</span></span>,
+        "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"恋"</span></span>,
+        "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:02/07/17:01:46:41"</span></span>,
+        "<span class="hljs-attribute">unixtime</span>": <span class="hljs-value"><span class="hljs-number">1486399601</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-number">63346553</span></span>,
+        "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"リアーナ"</span></span>,
+        "<span class="hljs-attribute">mid</span>": <span class="hljs-value"><span class="hljs-string">"U2ea06543275cc0f7e1b560e189459700"</span></span>,
+        "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-number">479237572</span></span>,
+        "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"Love_on_the_Brain"</span></span>,
+        "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:02/02/17:06:20:07"</span></span>,
+        "<span class="hljs-attribute">unixtime</span>": <span class="hljs-value"><span class="hljs-number">1485984007</span>
+      </span>}
+    ]
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_randomlike/<mid></span></div></div></div><div id="line-全てのユーザーのデータ取得" class="resource"><h3 class="resource-heading">全てのユーザーのデータ取得 <a href="#line-全てのユーザーのデータ取得" class="permalink">&nbsp;&para;</a></h3><div id="line-全てのユーザーのデータ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#line-全てのユーザーのデータ取得-get" class="method get">GET</a><code class="uri">/scan_alluserdata</code></h4><h4 id="header-処理概要-13">処理概要 <a class="permalink" href="#header-処理概要-13" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>全てのユーザーのデータ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p>curl -i <a href="https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/scan_alluserdata">https://p0mm6k7ykh.execute-api.ap-northeast-1.amazonaws.com/dev/scan_alluserdata</a> -H x-api-key:vrPszLwVdm136Ihmnt22q77oKbDXuZlm9ikcpxnR</p>
+<p>FORMAT: 1A</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_alluserdata</span></div></div></div></section><section id="messenger" class="resource-group"><h2 class="group-heading">MESSENGER <a href="#messenger" class="permalink">&para;</a></h2><h2 id="header-エンドポイント-1">エンドポイント <a class="permalink" href="#header-エンドポイント-1" aria-hidden="true">¶</a></h2>
+<p>[<a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev</a>]</p>
+<ul>
+<li>
+<p>Request (application/json)</p>
+<ul>
+<li>
+<p>Headers</p>
+<pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span></code></pre>
+</li>
+<li>
+<p>X-api-key</p>
+<pre><code>m<span class="hljs-title">m41</span>mEIZXI<span class="hljs-number">3</span>plaJjb<span class="hljs-number">4</span>Mb<span class="hljs-number">6</span>hq<span class="hljs-number">3</span>mTyAblD<span class="hljs-number">4</span>JVzqpxT<span class="hljs-number">0</span></code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="header-db内容-1">DB内容 <a class="permalink" href="#header-db内容-1" aria-hidden="true">¶</a></h3>
+<ul>
+<li>
+<p>Facebookの会員情報テーブル(FB_TEST)</p>
+</li>
+<li>
+<p>Facebookのテキスト情報テーブル(FB_TEST_text)</p>
+</li>
+<li>
+<p>Facebookの音楽情報テーブル(FB_TEST_music)</p>
+</li>
+<li>
+<p>Facebookのお気に入り情報テーブル(FB_TEST_like)</p>
+</li>
+</ul>
+<h3 id="header-カラム-1">カラム <a class="permalink" href="#header-カラム-1" aria-hidden="true">¶</a></h3>
+<ul>
+<li>会員情報テーブル
+<ul>
+<li>userid(FBの会員id)</li>
+<li>username</li>
+<li>gender(性別)</li>
+<li>profile_pic(プロフィール写真)</li>
+<li>locale</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_userdata]</p>
+<ul>
+<li>テキストテーブル
+<ul>
+<li>userid(FBの会員id)</li>
+<li>text</li>
+<li>context</li>
+<li>story_flag</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_textdata]</p>
+<ul>
+<li>音楽情報テーブル
+<ul>
+<li>userid(FBの会員id)</li>
+<li>artist_name</li>
+<li>song_name</li>
+<li>artist_id</li>
+<li>song_id</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_musicdata]</p>
+<ul>
+<li>お気に入り情報テーブル
+<ul>
+<li>userid(FBの会員id)</li>
+<li>artist_name</li>
+<li>song_name</li>
+<li>artist_id</li>
+<li>song_id</li>
+<li>time</li>
+</ul>
+</li>
+</ul>
+<p>クエリ [/post_request_likedata]</p>
+<div id="messenger-会員情報取得" class="resource"><h3 class="resource-heading">会員情報取得 <a href="#messenger-会員情報取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-会員情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-会員情報取得-get" class="method get">GET</a><code class="uri">/get_userdata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-14">処理概要 <a class="permalink" href="#header-処理概要-14" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>会員情報を1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">userid</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">username</span>": <span class="hljs-value"><span class="hljs-string">"KENZO"</span></span>,
+    "<span class="hljs-attribute">gender</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">profile_pic</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">locale</span>": <span class="hljs-value"><span class="hljs-string">"???"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_userdata/<userid></span></div></div></div><div id="messenger-テキスト情報取得" class="resource"><h3 class="resource-heading">テキスト情報取得 <a href="#messenger-テキスト情報取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-テキスト情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-テキスト情報取得-get" class="method get">GET</a><code class="uri">/get_textdata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-15">処理概要 <a class="permalink" href="#header-処理概要-15" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>テキスト情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">userid</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">context</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">story_flag</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"???"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_textdata/<userid></span></div></div></div><div id="messenger-音楽情報取得" class="resource"><h3 class="resource-heading">音楽情報取得 <a href="#messenger-音楽情報取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-音楽情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-音楽情報取得-get" class="method get">GET</a><code class="uri">/get_musicdata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-16">処理概要 <a class="permalink" href="#header-処理概要-16" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>音楽情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"葉加瀬太郎"</span></span>,
+    "<span class="hljs-attribute">pcounter</span>": <span class="hljs-value"><span class="hljs-number">6</span></span>,
+    "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-string">"1135364"</span></span>,
+    "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"情熱大陸"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"2017:01/24/17:10:27:17"</span></span>,
+    "<span class="hljs-attribute">userid</span>": <span class="hljs-value"><span class="hljs-string">"13413532"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_musicdata/<userid></span></div></div></div><div id="messenger-お気に入り情報取得" class="resource"><h3 class="resource-heading">お気に入り情報取得 <a href="#messenger-お気に入り情報取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-お気に入り情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-お気に入り情報取得-get" class="method get">GET</a><code class="uri">/get_likedata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-17">処理概要 <a class="permalink" href="#header-処理概要-17" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入り情報を最後の1つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+<pre><code>{
+    "<span class="hljs-attribute">userid</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">artist_name</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">song_name</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">artist_id</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">song_id</span>": <span class="hljs-value"><span class="hljs-string">"???"</span></span>,
+    "<span class="hljs-attribute">time</span>": <span class="hljs-value"><span class="hljs-string">"???"</span>
+  </span>}</code></pre>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/get_likedata/<userid></span></div></div></div><div id="messenger-会員情報挿入" class="resource"><h3 class="resource-heading">会員情報挿入 <a href="#messenger-会員情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="messenger-会員情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#messenger-会員情報挿入-post" class="method post">POST</a><code class="uri">/post_request_userdata</code></h4><h4 id="header-処理概要-18">処理概要 <a class="permalink" href="#header-処理概要-18" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>会員情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_userdataを追記しpostするuserid,username,gender,profile_picを記述</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_userdata">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_userdata</a>
+‘{“userid” : “???”, “username”:”???”, “gender” : “???”, “profile_pic” : “???”,”locale”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_userdata</span></div></div></div><div id="messenger-テキスト情報挿入" class="resource"><h3 class="resource-heading">テキスト情報挿入 <a href="#messenger-テキスト情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="messenger-テキスト情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#messenger-テキスト情報挿入-post" class="method post">POST</a><code class="uri">/post_request_textdata</code></h4><h4 id="header-処理概要-19">処理概要 <a class="permalink" href="#header-処理概要-19" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>テキスト情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_textdataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_textdata">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_textdata</a>
+‘{“userid” : “???”, “text” : “???”,”context”:”???”,”story_flag”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_textdata</span></div></div></div><div id="messenger-音楽情報挿入" class="resource"><h3 class="resource-heading">音楽情報挿入 <a href="#messenger-音楽情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="messenger-音楽情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#messenger-音楽情報挿入-post" class="method post">POST</a><code class="uri">/post_request_musicdata</code></h4><h4 id="header-処理概要-20">処理概要 <a class="permalink" href="#header-処理概要-20" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>音楽情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_musicdataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_musicdata">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_musicdata</a>
+‘{“userid” : “???”, “artist_name” : “???”, “song_name” : “???”, “song_id” : ”???”,”artist_id”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_musicdata</span></div></div></div><div id="messenger-お気に入り情報挿入" class="resource"><h3 class="resource-heading">お気に入り情報挿入 <a href="#messenger-お気に入り情報挿入" class="permalink">&nbsp;&para;</a></h3><div id="messenger-お気に入り情報挿入-post" class="action post"><h4 class="action-heading"><div class="name">情報挿入</div><a href="#messenger-お気に入り情報挿入-post" class="method post">POST</a><code class="uri">/post_request_likedata</code></h4><h4 id="header-処理概要-21">処理概要 <a class="permalink" href="#header-処理概要-21" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入り情報を1つ挿入</p>
+</li>
+<li>
+<p>エンドポイントに/post_request_likedataを追記</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p><a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_likedata">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/post_request_likedata</a>
+‘{“userid” : “???”, “artist_name” : “???”, “song_name” : “???”, “song_id” : ”???”,”artist_id”:”???”}’</p>
+<h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/post_request_likedata</span></div></div></div><div id="messenger-再生数の上位５つ取得" class="resource"><h3 class="resource-heading">再生数の上位５つ取得 <a href="#messenger-再生数の上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-再生数の上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-再生数の上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_musicdata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-22">処理概要 <a class="permalink" href="#header-処理概要-22" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>再生数の上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_musicdata/<userid></span></div></div></div><div id="messenger-お気に入りの上位５つ取得" class="resource"><h3 class="resource-heading">お気に入りの上位５つ取得 <a href="#messenger-お気に入りの上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-お気に入りの上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-お気に入りの上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_likedata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-23">処理概要 <a class="permalink" href="#header-処理概要-23" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>お気に入りの上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_likedata/<userid></span></div></div></div><div id="messenger-よく聴くアーティストの上位５つ取得" class="resource"><h3 class="resource-heading">よく聴くアーティストの上位５つ取得 <a href="#messenger-よく聴くアーティストの上位５つ取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-よく聴くアーティストの上位５つ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-よく聴くアーティストの上位５つ取得-get" class="method get">GET</a><code class="uri">/scan_artistdata/&lt;userid&gt;</code></h4><h4 id="header-処理概要-24">処理概要 <a class="permalink" href="#header-処理概要-24" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>よく聴くアーティストの上位５つ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_artistdata/<userid></span></div></div></div><div id="messenger-ランダムで５つユーザーとユーザーの聴いている曲取得" class="resource"><h3 class="resource-heading">ランダムで５つユーザーとユーザーの聴いている曲取得 <a href="#messenger-ランダムで５つユーザーとユーザーの聴いている曲取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-ランダムで５つユーザーとユーザーの聴いている曲取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-ランダムで５つユーザーとユーザーの聴いている曲取得-get" class="method get">GET</a><code class="uri">/scan_randomuserdata/&lt;username&gt;</code></h4><h4 id="header-処理概要-25">処理概要 <a class="permalink" href="#header-処理概要-25" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>ランダムで５つユーザーとユーザーの聴いている曲取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+<li>
+<p>groupは返って来ない</p>
+</li>
+<li>
+<p>以下はpictureUrlも返す仕様になっているが、ユーザーに情報がない時の例</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_randomuserdata/<username></span></div></div></div><div id="messenger-他の人がお気に入りに登録してある曲を５つランダムで取得" class="resource"><h3 class="resource-heading">他の人がお気に入りに登録してある曲を５つランダムで取得 <a href="#messenger-他の人がお気に入りに登録してある曲を５つランダムで取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-他の人がお気に入りに登録してある曲を５つランダムで取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-他の人がお気に入りに登録してある曲を５つランダムで取得-get" class="method get">GET</a><code class="uri">/scan_randomlike/&lt;userid&gt;</code></h4><h4 id="header-処理概要-26">処理概要 <a class="permalink" href="#header-処理概要-26" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>他の人がお気に入りに登録してある曲を５つランダムで取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+<li>
+<p>groupは返って来ない</p>
+</li>
+</ul>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_randomlike/<userid></span></div></div></div><div id="messenger-全てのユーザーのデータ取得" class="resource"><h3 class="resource-heading">全てのユーザーのデータ取得 <a href="#messenger-全てのユーザーのデータ取得" class="permalink">&nbsp;&para;</a></h3><div id="messenger-全てのユーザーのデータ取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#messenger-全てのユーザーのデータ取得-get" class="method get">GET</a><code class="uri">/scan_alluserdata</code></h4><h4 id="header-処理概要-27">処理概要 <a class="permalink" href="#header-処理概要-27" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>全てのユーザーのデータ取得</p>
+</li>
+<li>
+<p>headerにx-api-keyを付与</p>
+</li>
+</ul>
+<p>curl -i <a href="https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/scan_alluserdata">https://k2n42grp0c.execute-api.ap-northeast-1.amazonaws.com/dev/scan_alluserdata</a> -H x-api-key:J1ac3WBLjd6MKHEhRruF63sTAk2xHJPr2cvbU6Lf</p>
+<p>FORMAT: 1A</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/scan_alluserdata</span></div></div></div></section><section id="emotion-analytics" class="resource-group"><h2 class="group-heading">EMOTION-ANALYTICS <a href="#emotion-analytics" class="permalink">&para;</a></h2><h2 id="header-エンドポイント-2">エンドポイント <a class="permalink" href="#header-エンドポイント-2" aria-hidden="true">¶</a></h2>
+<p>[<a href="http://ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:8000/">http://ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:8000/</a>]</p>
+<ul>
+<li>
+<p>Request (application/json)</p>
+<ul>
+<li>
+<p>API</p>
+<pre><code>[<span class="hljs-regexp">/api/</span>v1<span class="hljs-regexp">/judge/</span>?sentences=]</code></pre>
+</li>
+<li>
+<p>Headers</p>
+<pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span></code></pre>
+</li>
+<li>
+<p>Transfer-Encoding</p>
+<pre><code><span class="hljs-title">chunked</span></code></pre>
+<ul>
+<li>
+<p>Connection</p>
+<p>keep-alive</p>
+</li>
+</ul>
+</li>
+<li>
+<p>X-Frame-Options</p>
+<pre><code>SAMEORIGIN</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<div id="emotion-analytics-楽曲情報取得" class="resource"><h3 class="resource-heading">楽曲情報取得 <a href="#emotion-analytics-楽曲情報取得" class="permalink">&nbsp;&para;</a></h3><div id="emotion-analytics-楽曲情報取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#emotion-analytics-楽曲情報取得-get" class="method get">GET</a><code class="uri">/api/v1/judge/(:sentences)</code></h4><h4 id="header-処理概要-28">処理概要 <a class="permalink" href="#header-処理概要-28" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>楽曲情報を取得</p>
+<pre><code>{
+    <span class="hljs-string">"sentence"</span>: <span class="hljs-string">"悲しい"</span>,
+    <span class="hljs-string">"judge_word"</span>: [
+      <span class="hljs-string">"悲しい"</span>
+    ],
+    <span class="hljs-string">"emotion_dict"</span>: {
+      <span class="hljs-string">"happy"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"relax"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"love"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"sad"</span>: <span class="hljs-number">3</span>,
+      <span class="hljs-string">"excited"</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-string">"angry"</span>: <span class="hljs-number">0</span>
+    },
+    <span class="hljs-string">"emotion"</span>: <span class="hljs-string">"sad"</span>
+  }%</code></pre>
+</li>
+</ul>
+<p>curl -i -X GET -H “Content-Type:application/json” ’<a href="http://ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:8000/api/v1/judge/?sentences=%E6%82%B2%E3%81%97%E3%81%84">ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:8000/api/v1/judge/?sentences=悲しい</a>’</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/judge/(:sentences)</span></div></div></div></section><section id="emotion-analytics-1" class="resource-group"><h2 class="group-heading">EMOTION-ANALYTICS <a href="#emotion-analytics-1" class="permalink">&para;</a></h2><div id="emotion-analytics-rdsからシーンごとの楽曲を取得" class="resource"><h3 class="resource-heading">RDSからシーンごとの楽曲を取得 <a href="#emotion-analytics-rdsからシーンごとの楽曲を取得" class="permalink">&nbsp;&para;</a></h3><div id="emotion-analytics-rdsからシーンごとの楽曲を取得-get" class="action get"><h4 class="action-heading"><div class="name">情報取得</div><a href="#emotion-analytics-rdsからシーンごとの楽曲を取得-get" class="method get">GET</a><code class="uri">/test2/[1-7]</code></h4><h4 id="header-処理概要-29">処理概要 <a class="permalink" href="#header-処理概要-29" aria-hidden="true">¶</a></h4>
+<ul>
+<li>
+<p>1-7の感情毎に照らし合わされた数字を参照して、その楽曲をランダムで10曲返す</p>
+</li>
+<li>
+<p>apiの[1-7]は1-7どれかの数字を一つ選ぶ</p>
+</li>
+</ul>
+<h2 id="header-エンドポイント-3">エンドポイント <a class="permalink" href="#header-エンドポイント-3" aria-hidden="true">¶</a></h2>
+<p>[<a href="http://ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:5000">http://ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:5000</a>]</p>
+<h4>Example URI</h4><div class="definition"><span class="method get">GET</span>&nbsp;<span class="uri"><span class="hostname"></span>/test2/[1-7]</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>+ API
+         [<span class="hljs-regexp">/test2/</span>[<span class="hljs-number">1</span>-<span class="hljs-number">7</span>]]
+ + Headers
+         Accept: application/json
+curl -i -X GET -H <span class="hljs-string">"Content-Type:application/json"</span> http:<span class="hljs-comment">//ec2-13-114-196-187.ap-northeast-1.compute.amazonaws.com:5000/test2/2</span>
+
+    {
+      <span class="hljs-string">"results"</span>: [
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"KANA-BOON"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">22</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"フルドライブ"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"ONE OK ROCK"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">25</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"The Beginning"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"ゆず"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">30</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"夏色"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"井上苑子"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">28</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"グッディ"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"三浦大知"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">31</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"music"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"Awesome City Club"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">32</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"今夜だけ間違いじゃないことにしてあげる"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"オレンジレンジ"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">35</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"イケナイ太陽"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"Porter Robinson &amp; Madeon"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">34</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"Shelter"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"くるり"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">39</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"ばらの花"</span>
+        },
+        {
+          <span class="hljs-string">"artists"</span>: <span class="hljs-string">"BIGBANG"</span>,
+          <span class="hljs-string">"emotion_num"</span>: <span class="hljs-number">2</span>,
+          <span class="hljs-string">"id"</span>: <span class="hljs-number">24</span>,
+          <span class="hljs-string">"songs"</span>: <span class="hljs-string">"FANTASTIC BABY"</span>
+        }
+      ]
+    }</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 10 Nov 2017</p><script>/* eslint-env browser */
+/* eslint quotes: [2, "single"] */
+'use strict';
+
+/*
+  Determine if a string ends with another string.
+*/
+function endsWith(str, suffix) {
+    return str.indexOf(suffix, str.length - suffix.length) !== -1;
+}
+
+/*
+  Get a list of direct child elements by class name.
+*/
+function childrenByClass(element, name) {
+  var filtered = [];
+
+  for (var i = 0; i < element.children.length; i++) {
+    var child = element.children[i];
+    var classNames = child.className.split(' ');
+    if (classNames.indexOf(name) !== -1) {
+      filtered.push(child);
+    }
+  }
+
+  return filtered;
+}
+
+/*
+  Get an array [width, height] of the window.
+*/
+function getWindowDimensions() {
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.body,
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+  return [x, y];
+}
+
+/*
+  Collapse or show a request/response example.
+*/
+function toggleCollapseButton(event) {
+    var button = event.target.parentNode;
+    var content = button.parentNode.nextSibling;
+    var inner = content.children[0];
+
+    if (button.className.indexOf('collapse-button') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        // Currently showing, so let's hide it
+        button.className = 'collapse-button';
+        content.style.maxHeight = '0px';
+    } else {
+        // Currently hidden, so let's show it
+        button.className = 'collapse-button show';
+        content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+function toggleTabButton(event) {
+    var i, index;
+    var button = event.target;
+
+    // Get index of the current button.
+    var buttons = childrenByClass(button.parentNode, 'tab-button');
+    for (i = 0; i < buttons.length; i++) {
+        if (buttons[i] === button) {
+            index = i;
+            button.className = 'tab-button active';
+        } else {
+            buttons[i].className = 'tab-button';
+        }
+    }
+
+    // Hide other tabs and show this one.
+    var tabs = childrenByClass(button.parentNode.parentNode, 'tab');
+    for (i = 0; i < tabs.length; i++) {
+        if (i === index) {
+            tabs[i].style.display = 'block';
+        } else {
+            tabs[i].style.display = 'none';
+        }
+    }
+}
+
+/*
+  Collapse or show a navigation menu. It will not be hidden unless it
+  is currently selected or `force` has been passed.
+*/
+function toggleCollapseNav(event, force) {
+    var heading = event.target.parentNode;
+    var content = heading.nextSibling;
+    var inner = content.children[0];
+
+    if (heading.className.indexOf('heading') === -1) {
+      // Clicked without hitting the right element?
+      return;
+    }
+
+    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+      // Currently showing, so let's hide it, but only if this nav item
+      // is already selected. This prevents newly selected items from
+      // collapsing in an annoying fashion.
+      if (force || window.location.hash && endsWith(event.target.href, window.location.hash)) {
+        content.style.maxHeight = '0px';
+      }
+    } else {
+      // Currently hidden, so let's show it
+      content.style.maxHeight = inner.offsetHeight + 12 + 'px';
+    }
+}
+
+/*
+  Refresh the page after a live update from the server. This only
+  works in live preview mode (using the `--server` parameter).
+*/
+function refresh(body) {
+    document.querySelector('body').className = 'preload';
+    document.body.innerHTML = body;
+
+    // Re-initialize the page
+    init();
+    autoCollapse();
+
+    document.querySelector('body').className = '';
+}
+
+/*
+  Determine which navigation items should be auto-collapsed to show as many
+  as possible on the screen, based on the current window height. This also
+  collapses them.
+*/
+function autoCollapse() {
+  var windowHeight = getWindowDimensions()[1];
+  var itemsHeight = 64; /* Account for some padding */
+  var itemsArray = Array.prototype.slice.call(
+    document.querySelectorAll('nav .resource-group .heading'));
+
+  // Get the total height of the navigation items
+  itemsArray.forEach(function (item) {
+    itemsHeight += item.parentNode.offsetHeight;
+  });
+
+  // Should we auto-collapse any nav items? Try to find the smallest item
+  // that can be collapsed to show all items on the screen. If not possible,
+  // then collapse the largest item and do it again. First, sort the items
+  // by height from smallest to largest.
+  var sortedItems = itemsArray.sort(function (a, b) {
+    return a.parentNode.offsetHeight - b.parentNode.offsetHeight;
+  });
+
+  while (sortedItems.length && itemsHeight > windowHeight) {
+    for (var i = 0; i < sortedItems.length; i++) {
+      // Will collapsing this item help?
+      var itemHeight = sortedItems[i].nextSibling.offsetHeight;
+      if ((itemsHeight - itemHeight <= windowHeight) || i === sortedItems.length - 1) {
+        // It will, so let's collapse it, remove its content height from
+        // our total and then remove it from our list of candidates
+        // that can be collapsed.
+        itemsHeight -= itemHeight;
+        toggleCollapseNav({target: sortedItems[i].children[0]}, true);
+        sortedItems.splice(i, 1);
+        break;
+      }
+    }
+  }
+}
+
+/*
+  Initialize the interactive functionality of the page.
+*/
+function init() {
+    var i, j;
+
+    // Make collapse buttons clickable
+    var buttons = document.querySelectorAll('.collapse-button');
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = toggleCollapseButton;
+
+        // Show by default? Then toggle now.
+        if (buttons[i].className.indexOf('show') !== -1) {
+            toggleCollapseButton({target: buttons[i].children[0]});
+        }
+    }
+
+    var responseCodes = document.querySelectorAll('.example-names');
+    for (i = 0; i < responseCodes.length; i++) {
+        var tabButtons = childrenByClass(responseCodes[i], 'tab-button');
+        for (j = 0; j < tabButtons.length; j++) {
+            tabButtons[j].onclick = toggleTabButton;
+
+            // Show by default?
+            if (j === 0) {
+                toggleTabButton({target: tabButtons[j]});
+            }
+        }
+    }
+
+    // Make nav items clickable to collapse/expand their content.
+    var navItems = document.querySelectorAll('nav .resource-group .heading');
+    for (i = 0; i < navItems.length; i++) {
+        navItems[i].onclick = toggleCollapseNav;
+
+        // Show all by default
+        toggleCollapseNav({target: navItems[i].children[0]});
+    }
+}
+
+// Initial call to set up buttons
+init();
+
+window.onload = function () {
+    autoCollapse();
+    // Remove the `preload` class to enable animations
+    document.querySelector('body').className = '';
+};
+</script></body></html>
